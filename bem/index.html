@@ -1,11 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>esta es la carpeta de BEM</p>
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reto BEM - Tarjeta de perfil</title>
+    <link rel="stylesheet" href="perfil.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="page__section">
+        <h1 class="page__title">Tarjeta de perfil (BEM)</h1>
+
+        <article class="profile-card profile-card--featured">
+          <div class="profile-card__avatar">ZD</div>
+
+          <div class="profile-card__info">
+            <h2 class="profile-card__name">Zakkdruzer</h2>
+            <span class="badge badge--pro">PRO</span>
+            <p class="profile-card__bio">
+              Desarrollador web y creador de juegos. Amante del CSS limpio.
+            </p>
+          </div>
+
+          <div class="profile-card__stats">
+            <div class="profile-card__stat">
+              <span class="profile-card__stat-value">1.2K</span>
+              <span class="profile-card__stat-label">Seguidores</span>
+            </div>
+            <div class="profile-card__stat">
+              <span class="profile-card__stat-value">480</span>
+              <span class="profile-card__stat-label">Siguiendo</span>
+            </div>
+            <div class="profile-card__stat">
+              <span class="profile-card__stat-value">89</span>
+              <span class="profile-card__stat-label">Publicaciones</span>
+            </div>
+          </div>
+
+          <div class="profile-card__actions">
+            <button class="profile-card__button profile-card__button--primary">
+              Seguir
+            </button>
+            <button class="profile-card__button profile-card__button--secondary">
+              Mensaje
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>
