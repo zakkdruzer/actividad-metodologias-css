@@ -1,0 +1,61 @@
+/* Contenedor reutilizable */
+.container-narrow {
+  max-width: 640px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Estructura del aviso (object) */
+.alert {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+}
+
+/* Títulos y mensajes (solo tipografía/espacio básicos) */
+.alert__title {
+  font-weight: 600;
+}
+
+.alert__message {
+  margin: 0;
+}
+
+/* Estructura del chip (otro object) */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.75rem;
+}
+
+/* Skins de color reutilizables */
+.is-success {
+  background: #022c22;
+  border-color: #16a34a;
+  color: #bbf7d0;
+}
+
+.is-warning {
+  background: #451a03;
+  border-color: #f97316;
+  color: #fed7aa;
+}
+
+.is-error {
+  background: #450a0a;
+  border-color: #ef4444;
+  color: #fecaca;
+}
+
+.is-info {
+  background: #0b1120;
+  border-color: #3b82f6;
+  color: #bfdbfe;
+}

@@ -1,38 +1,82 @@
-<section class="banner">
-  <div class="container-narrow">
-    <div class="alert is-success">
-      <strong class="alert__title">Guardado con éxito</strong>
-      <p class="alert__message">Tu perfil se actualizó correctamente.</p>
-    </div>
-  </div>
-</section>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reto OOCSS - Kit de avisos</title>
+    <link rel="stylesheet" href="oocss.css" />
+  </head>
+  <body>
+    <!-- Franja superior (usa container reutilizable) -->
+    <header class="site-header">
+      <div class="container-narrow">
+        <h1 class="site-title">Sistema de avisos (OOCSS)</h1>
+        <p class="site-subtitle">
+          Estructura + piel reutilizable para mensajes de éxito, advertencia, error e información.
+        </p>
 
-<main class="page">
-  <section class="container-narrow">
-    <h1>Sistema de avisos (OOCSS)</h1>
+        <!-- Demostración: mismo objeto en otro contenedor -->
+        <div class="alert is-success">
+          <strong class="alert__title">Guardado con éxito</strong>
+          <p class="alert__message">Este aviso usa la misma estructura aquí y en el cuerpo.</p>
+        </div>
+      </div>
+    </header>
 
-    <div class="alert is-warning">
-      <strong class="alert__title">Cuidado</strong>
-      <p class="alert__message">Estás a punto de sobrescribir datos.</p>
-    </div>
+    <!-- Cuerpo principal -->
+    <main class="site-main">
+      <section class="container-narrow">
+        <h2>Ejemplos de avisos</h2>
 
-    <div class="alert is-error">
-      <strong class="alert__title">Algo salió mal</strong>
-      <p class="alert__message">No se pudo guardar la información.</p>
-    </div>
+        <!-- Aviso de éxito -->
+        <div class="alert is-success">
+          <strong class="alert__title">Guardado con éxito</strong>
+          <p class="alert__message">
+            Tu perfil se actualizó correctamente.
+          </p>
+        </div>
 
-    <div class="alert is-info">
-      <strong class="alert__title">Dato interesante</strong>
-      <p class="alert__message">
-        Puedes deshacer esta acción en los próximos 5 minutos.
-      </p>
-    </div>
+        <!-- Aviso de advertencia -->
+        <div class="alert is-warning">
+          <strong class="alert__title">Cuidado</strong>
+          <p class="alert__message">
+            Estás a punto de sobrescribir datos importantes.
+          </p>
+        </div>
 
-    <div class="chip-row">
-      <span class="chip is-success">Activo</span>
-      <span class="chip is-warning">Pendiente</span>
-      <span class="chip is-error">Fallido</span>
-      <span class="chip is-info">Info</span>
-    </div>
-  </section>
-</main>
+        <!-- Aviso de error -->
+        <div class="alert is-error">
+          <strong class="alert__title">Algo salió mal</strong>
+          <p class="alert__message">
+            No se pudo completar la acción. Inténtalo otra vez.
+          </p>
+        </div>
+
+        <!-- Aviso de información -->
+        <div class="alert is-info">
+          <strong class="alert__title">Dato interesante</strong>
+          <p class="alert__message">
+            Puedes deshacer esta acción durante los próximos 5 minutos.
+          </p>
+        </div>
+
+        <!-- (Reto extra opcional) Aviso neutral, solo nueva skin -->
+        <div class="alert is-neutral">
+          <strong class="alert__title">Aviso neutral</strong>
+          <p class="alert__message">
+            Este es un quinto tipo de aviso creado solo con una nueva clase de color.
+          </p>
+        </div>
+
+        <h2>Chips / etiquetas reutilizando las skins</h2>
+
+        <div class="chip-row">
+          <span class="chip is-success">Activo</span>
+          <span class="chip is-warning">Pendiente</span>
+          <span class="chip is-error">Fallido</span>
+          <span class="chip is-info">Info</span>
+          <span class="chip is-neutral">Neutral</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
