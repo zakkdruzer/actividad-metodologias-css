@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reto SMACSS - Mini dashboard</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/state.css">
+    <link rel="stylesheet" href="css/theme.css">
+  </head>
+  <body class="theme-dark">
+    <div class="l-app">
+      <!-- Sidebar -->
+      <aside class="l-sidebar" id="sidebar">
+        <div class="logo">MyPanel</div>
+
+        <nav class="nav">
+          <button class="nav-item is-active">
+            <span class="nav-item__icon">🏠</span>
+            <span class="nav-item__label">Inicio</span>
+          </button>
+          <button class="nav-item">
+            <span class="nav-item__icon">📁</span>
+            <span class="nav-item__label">Proyectos</span>
+          </button>
+          <button class="nav-item">
+            <span class="nav-item__icon">✅</span>
+            <span class="nav-item__label">Tareas</span>
+          </button>
+        </nav>
+
+        <button class="btn btn--ghost" id="toggle-sidebar">
+          Toggle sidebar
+        </button>
+      </aside>
+
+      <!-- Zona principal -->
+      <div class="l-main">
+        <header class="l-header">
+          <h1 class="page-title">Mini dashboard</h1>
+          <button class="btn btn--primary" id="toggle-theme">
+            Cambiar tema
+          </button>
+        </header>
+
+        <main class="l-content">
+          <section class="grid-cards">
+            <article class="card">
+              <h2 class="card__title">Tareas pendientes</h2>
+              <p class="card__value">12</p>
+              <p class="card__hint">3 vencen hoy</p>
+            </article>
+
+            <article class="card">
+              <h2 class="card__title">Proyectos activos</h2>
+              <p class="card__value">5</p>
+              <p class="card__hint">2 en revisión</p>
+            </article>
+
+            <article class="card">
+              <h2 class="card__title">Mensajes</h2>
+              <p class="card__value">18</p>
+              <p class="card__hint">5 sin leer</p>
+            </article>
+          </section>
+
+          <section class="tasks">
+            <h2 class="section-title">Lista de tareas</h2>
+            <ul class="task-list">
+              <li class="task-item">
+                <label>
+                  <input type="checkbox" class="js-toggle-completed">
+                  <span class="task-item__label">Diseñar tarjeta BEM</span>
+                </label>
+              </li>
+              <li class="task-item is-completed">
+                <label>
+                  <input type="checkbox" class="js-toggle-completed" checked>
+                  <span class="task-item__label">Configurar avisos OOCSS</span>
+                </label>
+              </li>
+              <li class="task-item">
+                <label>
+                  <input type="checkbox" class="js-toggle-completed">
+                  <span class="task-item__label">Organizar CSS con SMACSS</span>
+                </label>
+              </li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // Toggle estado de sidebar (is-collapsed en l-app)
+      const app = document.querySelector('.l-app');
+      const toggleSidebarBtn = document.getElementById('toggle-sidebar');
+
+      toggleSidebarBtn.addEventListener('click', () => {
+        app.classList.toggle('is-sidebar-collapsed');
+      });
+
+      // Toggle tema claro/oscuro en body
+      const toggleThemeBtn = document.getElementById('toggle-theme');
+      const body = document.body;
+
+      toggleThemeBtn.addEventListener('click', () => {
+        body.classList.toggle('theme-light');
+        body.classList.toggle('theme-dark');
+      });
+
+      // Toggle tareas completadas
+      document.querySelectorAll('.js-toggle-completed').forEach((checkbox) => {
+        checkbox.addEventListener('change', (event) => {
+          const li = event.target.closest('.task-item');
+          li.classList.toggle('is-completed');
+        });
+      });
+    </script>
+  </body>
+</html>
