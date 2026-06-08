@@ -1,0 +1,55 @@
+/* =========================================
+   STATE.CSS
+   - Estados de la UI con prefijo is-
+   - Se añaden sobre layouts o módulos existentes
+   - Dependen normalmente de JavaScript (toggle de clases)
+   ========================================= */
+
+/* 1. Estado: nav-item activo
+   - Resalta el item seleccionado en el menú lateral
+   - Se aplica como clase adicional: .nav-item.is-active */
+.nav-item.is-active {
+  /* El color de fondo y borde exacto vendrá de theme.css
+     Aquí solo podemos definir cambios estructurales muy ligeros si hiciera falta.
+     Para este ejemplo, dejamos solo un ligero énfasis con font-weight. */
+  font-weight: 600;
+}
+
+/* Cuando la app está colapsada, hacemos más estrecha la sidebar */
+.l-app.is-sidebar-collapsed .l-sidebar {
+  width: 72px;
+  padding-inline: 0.5rem;
+}
+
+/* Ocultamos el texto de los items de navegación, dejando solo los iconos */
+.l-app.is-sidebar-collapsed .nav-item__label {
+  display: none;
+}
+
+/* Centramos los iconos cuando la sidebar está colapsada */
+.l-app.is-sidebar-collapsed .nav {
+  align-items: center;
+}
+
+.l-app.is-sidebar-collapsed .nav-item {
+  justify-content: center;
+  padding-inline: 0.5rem;
+}
+
+/* 3. Estado: tarea completada
+   - Se aplica a .task-item cuando el checkbox está marcado
+   - Visualmente, la tarea se ve “hecha” */
+.task-item.is-completed .task-item__label {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* 4. (Opcional) Estado: item de menú enfocado o hovered
+   - Podrías añadir .is-hovered si quisieras gestionarlo con JS,
+     pero normalmente el :hover va en module.css / theme.css.
+   - Lo dejamos comentado para indicar el patrón. */
+/*
+.nav-item.is-hovered {
+  ...
+}
+*/
