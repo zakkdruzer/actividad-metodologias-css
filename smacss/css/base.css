@@ -1,0 +1,98 @@
+/* =========================================
+   BASE.CSS
+   - Solo estilos sobre etiquetas (sin clases ni ids)
+   - "Reset ampliado" para todo el proyecto
+   ========================================= */
+
+/* 1. Modelo de caja consistente en toda la página
+   Usamos border-box para que width/height incluyan padding y borde. */
+html {
+  box-sizing: border-box;
+}
+
+/* Heredamos el box-sizing a todos los elementos y pseudoelementos. */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* 2. Estilos base del body
+   - Quitamos el margen por defecto del navegador.
+   - Definimos tipografía genérica del sistema.
+   - Ajustamos la altura de línea para mejor legibilidad. */
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+}
+
+/* 3. Titulares
+   - Unificamos márgenes.
+   - Ajustamos el peso por defecto. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+/* 4. Párrafos
+   - Márgen inferior consistente; sin margen superior. */
+p {
+  margin: 0 0 1rem;
+}
+
+/* 5. Listas
+   - Eliminamos margen por defecto.
+   - Dejamos un padding izquierdo leve (puedes poner 0 si prefieres manejarlo en módulos). */
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+/* 6. Botones
+   - Reseteamos estilos de navegador.
+   - Heredamos la fuente del body.
+   - No definimos todavía colores ni tamaños específicos (eso va en módulos/tema). */
+button {
+  font: inherit;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* 7. Enlaces
+   - Quitamos subrayado y color por defecto.
+   - El color real vendrá de theme.css. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 8. Imágenes
+   - Evitamos que se salgan de su contenedor.
+   - Las mostramos como bloques para que no generen espacios raros bajo la imagen. */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 9. Formularios básicos (inputs y textarea)
+   - Heredan tipografía.
+   - Quitamos margen por defecto. */
+input,
+textarea {
+  font: inherit;
+  margin: 0;
+}
